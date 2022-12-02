@@ -2,16 +2,16 @@ import React from 'react'
 import { useRoutes, Navigate } from 'react-router-dom'
 import moment from 'moment'
 // 组件
-import Home from '@/pages/Home'
-import Links from '@/pages/Links'
-import Members from '@/pages/Members'
-import Publication from '@/pages/Publication'
-import Research from '@/pages/Research'
-import Tutor from '@/pages/Tutor'
-import Activity from '@/pages/Activity'
-import News from '@/pages/News'
-import Gallery from '@/pages/Gallery'
-import DetailNew from '@/pages/DetailNew'
+const Home = React.lazy(_ => import('@/pages/Home'))
+const Links = React.lazy(_ => import('@/pages/Links'))
+const Members = React.lazy(_ => import('@/pages/Members'))
+const Publication = React.lazy(_ => import('@/pages/Publication'))
+const Research = React.lazy(_ => import('@/pages/Research'))
+const Tutor = React.lazy(_ => import('@/pages/Tutor'))
+const Activity = React.lazy(_ => import('@/pages/Activity'))
+const News = React.lazy(_ => import('@/pages/News'))
+const Gallery = React.lazy(_ => import('@/pages/Gallery'))
+const DetailNew = React.lazy(_ => import('@/pages/DetailNew'))
 
 export default function RoutesMap() {
     const routes = useRoutes([
@@ -27,10 +27,9 @@ export default function RoutesMap() {
         { path: '/links', element: <Links /> },
         { path: '/activity', element: <Navigate to='/activity/group' /> },
         { path: '/activity/:gallery', element: <Activity /> },
-        { path: '/activity/group/:name', element: <Gallery /> },
-        { path: '/activity/events/:name', element: <Gallery /> },
+        { path: '/detail', element: <Gallery /> },
         { path: '/news', element: <News /> },
-        { path: '/news/:title', element: <DetailNew /> }
+        { path: '/news/:id', element: <DetailNew /> }
     ])
     return routes
 }

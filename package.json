@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.8.0",
+    "@cloudbase/js-sdk": "1.7.2",
     "@craco/craco": "^7.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -20,6 +21,7 @@
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
     "redux-immutable": "^4.0.0",
     "redux-thunk": "^2.4.2",
     "styled-components": "^5.3.6",
@@ -27,7 +29,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "CI=false&&craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },

@@ -31,9 +31,8 @@ export const StudentCardWrapper = styled.div`
             font-size: 18px;
             font-weight: 600;
             color: #005cbb;
-            font-family: '华文中宋'
+            font-family: '楷体'
         }
-
         .name::after{
             content: '';
             width: 30px;
@@ -43,7 +42,6 @@ export const StudentCardWrapper = styled.div`
             left: 0;
             bottom: 0;
         }
-
         .email{
             margin-top: 14px;
             font-size: 16px;

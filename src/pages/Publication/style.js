@@ -8,4 +8,7 @@ export const PublicationWrapper = styled.div`
         margin: 0;
         padding: 0;
     }
+    .wrap-v1{
+        justify-content: space-between;
+    }
 `

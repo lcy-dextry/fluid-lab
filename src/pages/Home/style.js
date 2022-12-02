@@ -50,4 +50,15 @@ export const HomeWrapper = styled.div`
         height: 1px;
         background-color: black;
     }
+    .news-list{
+        display: flex;
+        justify-content: flex-start;
+
+        .sc-jSUZER{
+            margin-right: 40px;
+        }
+        .sc-jSUZER:last-child{
+            margin-right: 0;
+        }
+    }
 `

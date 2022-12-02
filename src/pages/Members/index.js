@@ -1,4 +1,5 @@
-import React, { memo } from 'react'
+import React, { memo, useState, useEffect } from 'react'
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import moment from 'moment'
 import { useParams } from 'react-router-dom'
@@ -9,43 +10,53 @@ import Title from 'c/title'
 import Banner from 'c/banner'
 import StudentCard from './student-card'
 // 数据
-import { memberList, members } from '@/common/local'
+import { memberList } from '@/common/local'
+import { db } from '@/utils/cloudBase';
+import { getMembers } from '@/redux/actions'
 
-const Members = memo(() => {
+const Members = memo(({
+    data,
+    getMembers
+}) => {
+    // 获取
+    const getNewTexts = () => {
+        db.collection('members')
+            .get()
+            .then(res => {
+                getMembers(res.data);
+            });
+    };
+    useEffect(() => {
+        getNewTexts();
+    }, [data]);
+    // 当前类型
     const { type } = useParams()
-    // 在读
-    const masters = members.filter(item => {
-        return moment(item.year).add(31, 'months').isAfter(moment());
-    })
-    // 毕业
-    const graduates = members.filter(item => {
-        return moment(item.year).add(31, 'months').isBefore(moment());
-    })
-    const component = type === 'master' ? (
+    // 当前内容
+    const [title, setTitle] = useState('')
+    const [nowMembers, setNowMembers] = useState([])
+    useEffect(() => {
+        const id = type;
+        const theMembers = id === 'master'
+            ? data.filter(item => {
+                return moment(item.year).add(31, 'months').isAfter(moment());
+            })
+            : data.filter(item => {
+                return moment(item.year).add(31, 'months').isBefore(moment());
+            })
+        const theTitle = id === 'master' ? '研究生' : '毕业生'
+        if (theMembers) {
+            setNowMembers(theMembers);
+        }
+        if (theTitle) {
+            setTitle(theTitle)
+        }
+    }, [data, document.location])
+    const component = (
         <>
-            <Title title='研究生' />
-            <div className='masters-list'>
+            <Title title={title} />
+            <div className='members-list'>
                 {
-                    masters.map(item => {
-                        return (
-                            <StudentCard
-                                key={item.name}
-                                img={item.img}
-                                name={item.name}
-                                year={item.year}
-                                email={item.email}
-                            />
-                        )
-                    })
-                }
-            </div>
-        </>
-    ) : (
-        <>
-            <Title title='毕业生' />
-            <div className='graduates-list'>
-                {
-                    graduates.map(item => {
+                    nowMembers.map(item => {
                         return (
                             <StudentCard
                                 key={item.name}
@@ -84,4 +95,9 @@ const Members = memo(() => {
         </>
     )
 })
-export default Members
+export default connect(
+    state => ({
+        data: state.members
+    }),
+    { getMembers }
+)(Members);

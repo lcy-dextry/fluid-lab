@@ -16,9 +16,15 @@ export const ActivityWrapper = styled.div`
         height: 60px;
         padding: 15px 10px 20px;
         border-bottom: 1px dashed #E2E2E2;
+        font-size: 13px;
+        font-family: 'Microsoft Yahei';
+        color: #666;
 
         &:hover{
             background-color: #FAFAFA;
         }
+    }
+    .wrap-v1{
+        justify-content: space-between;
     }
 `

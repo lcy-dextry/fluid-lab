@@ -9,20 +9,10 @@ const Header = memo(() => {
     return (
         <HeaderWrapper>
             <div className='wrap-v1'>
-                <div className='lab-name' />
+                <a href='#' target='_blank'><div className='lab-name' /></a>
                 <ul className='guide-list'>
                     {
                         headerLinks.map((item, index) => {
-                            // if (index === 7) {
-                            //     return (
-                            //         <NavLink
-                            //             className='guide-item search-icon'
-                            //             key={item.title}
-                            //             to={item.link}>
-                            //             {item.component}
-                            //         </NavLink>
-                            //     )
-                            // } else {
                             return (
                                 <NavLink
                                     className='guide-item'

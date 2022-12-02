@@ -1,19 +1,22 @@
-import React, { memo } from 'react'
+import React, { memo, Suspense } from 'react'
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-// 自定义工具
-import store from '@/store';
-// 自定义组件
+// 数据
+import store from '@/redux/store';
+// 组件
 import Header from 'c/header';
 import Footer from 'c/footer';
 import RoutesMap from '@/utils/routes.js';
+import { Spin } from 'antd';
 
 const App = memo(() => {
   return (
     <Provider store={store}>
       <BrowserRouter>
         <Header />
-        <RoutesMap />
+        <Suspense fallback={<Spin />}>
+          <RoutesMap />
+        </Suspense>
         <Footer />
       </BrowserRouter>
     </Provider>

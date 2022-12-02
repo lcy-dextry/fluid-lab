@@ -1,15 +1,20 @@
-import React, { memo } from 'react'
+import React, { memo, useState, useEffect } from 'react'
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { marked } from 'marked';
 // 组件
 import Banner from 'c/banner'
-import Content from 'c/content'
 import { TutorWrapper } from './style'
 // 数据
-import { tutorList, briefMarkdown, projectMarkdown, honorMarkdown } from '@/common/local'
+import { db } from '@/utils/cloudBase';
+import { getTutorText } from '@/redux/actions';
+import { makeList } from '@/utils/functions';
 
-const Tutor = memo(() => {
+const Tutor = memo(({
+    texts,
+    getTutorText
+}) => {
     // 配置marked
     marked.setOptions({
         renderer: new marked.Renderer(),
@@ -21,54 +26,39 @@ const Tutor = memo(() => {
         smartLists: true,
         smartypants: false
     })
-    let component
+    // 获取
+    const [text, setText] = useState([]);
+    const getNewTexts = () => {
+        db.collection('tutor')
+            .get()
+            .then(res => {
+                getTutorText(res.data);
+            });
+    };
+    useEffect(() => {
+        getNewTexts();
+        setText(texts);
+    }, [texts]);
+    // 当前类型
     const { type } = useParams()
-    const brief_component = (
-        <>
-            <div className='tutor-photo' />
-            <div className='linear' />
-            <div
-                className='brief'
-                dangerouslySetInnerHTML={{ __html: marked(briefMarkdown).replace(/<pre>/g, "<pre id='hlsj'>") }}
-            />
-        </>
-    )
-    const project_component = (
-        <>
-            <div
-                className='project'
-                dangerouslySetInnerHTML={{ __html: marked(projectMarkdown).replace(/<pre>/g, "<pre id='hlsj'>") }}
-            />
-        </>
-    )
-    const honor_component = (
-        <>
-            <div
-                className='honor'
-                dangerouslySetInnerHTML={{ __html: marked(honorMarkdown).replace(/<pre>/g, "<pre id='hlsj'>") }}
-            />
-        </>
-    )
-    switch (type) {
-        case 'brief':
-            component = brief_component
-            break;
-        case 'project':
-            component = project_component
-            break;
-        case 'honor':
-            component = honor_component
-            break;
-        default:
-            component = ''
-    }
+    // 当前内容
+    const [nowText, setNowText] = useState('')
+    useEffect(() => {
+        const id = type;
+        const theText = texts.filter(item => item.location === id)[0];
+        if (theText) {
+            const { text } = theText;
+            setNowText(text);
+        }
+    }, [texts, document.location]);
+
     return (
         <>
             <Banner />
             <TutorWrapper>
                 <ul className='guide-list'>
                     {
-                        tutorList.map(item => {
+                        makeList(text).map(item => {
                             return (
                                 <NavLink
                                     to={`/tutor/${item.location}`}
@@ -81,9 +71,22 @@ const Tutor = memo(() => {
                         })
                     }
                 </ul>
-                <Content Component={component} />
+                <div className='wrap-v1 markdown-part'>
+                    <div
+                        className=" markdownStyle"
+                        dangerouslySetInnerHTML={{
+                            __html: marked(nowText).replace(/<pre>/g, "<pre>"),
+                        }}
+                    />
+                </div>
             </TutorWrapper>
         </>
     )
 })
-export default Tutor
+export default connect(
+    state => ({
+        texts: state.tutorText
+    }),
+    { getTutorText }
+)(Tutor);
+

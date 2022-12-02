@@ -1,4 +1,5 @@
-import React, { memo } from 'react'
+import React, { memo, useState, useEffect } from 'react'
+import { connect } from 'react-redux'
 import { useParams } from 'react-router-dom'
 // 组件
 import Banner from 'c/banner'
@@ -8,13 +9,35 @@ import YearMenu from './components/year-menu'
 import LocationBox from './components/location-box'
 import ArticleBox from './components/article-box'
 // 数据
-import { articleList } from '@/common/local'
+import { db } from '@/utils/cloudBase';
+import { getPublication } from '@/redux/actions'
 
-const Publication = memo(() => {
+const Publication = memo(({
+    papers,
+    getPublication
+}) => {
+    // 当前年份
     const { year: currentYear } = useParams()
-    const showList = articleList.filter(item => {
-        return item.year === currentYear + ''
-    })
+    // 获取
+    const getNewTexts = () => {
+        db.collection('publication')
+            .get()
+            .then(res => {
+                getPublication(res.data);
+            });
+    };
+    useEffect(() => {
+        getNewTexts();
+    }, [papers]);
+    // 当前内容
+    const [nowPapers, setNowPapers] = useState([])
+    useEffect(() => {
+        const id = currentYear;
+        const thePapers = papers.filter(item => { return item.year == id });
+        if (thePapers) {
+            setNowPapers(thePapers);
+        }
+    }, [papers, document.location])
 
     const component = (
         <>
@@ -23,11 +46,11 @@ const Publication = memo(() => {
                 <LocationBox year={currentYear} />
                 <ul className='article-list'>
                     {
-                        showList.map((item, index) => {
+                        nowPapers.map(item => {
                             return (
                                 <ArticleBox
-                                    key={item.text}
-                                    text={`[${index + 1}]. ${item.text}`} />
+                                    key={item.paper}
+                                    text={item.paper} />
                             )
                         })
                     }
@@ -45,5 +68,9 @@ const Publication = memo(() => {
 
     )
 })
-
-export default Publication
+export default connect(
+    state => ({
+        papers: state.publication
+    }),
+    { getPublication }
+)(Publication);

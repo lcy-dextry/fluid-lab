@@ -41,6 +41,12 @@ html {
   width: 1200px;
   margin: 0 auto;
 }
+.content {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .nowrap-one-line {
   display: block;
   text-overflow: ellipsis;
@@ -53,4 +59,44 @@ html {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+}
+.markdownStyle {
+  line-height: 32px;
+  font-size: 16px;
+  font-family: '宋体';
+  color: #000;
+}
+.markdownStyle table {
+  margin: 20px auto;
+  border: 1px solid #000;
+  border-spacing: 0;
+  text-align: center;
+}
+.markdownStyle table th,
+.markdownStyle table td {
+  padding: 6px 14px;
+  border: 1px solid #000;
+}
+.markdownStyle code {
+  color: red;
+  background-color: #eeeeee;
+  padding: 0 4px;
+}
+/* 图片 */
+.markdownStyle p img {
+  display: block;
+  max-width: 100%;
+  margin: 14px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+.markdownStyle blockquote {
+  background-color: #dfdfdf;
+  padding: 14px 40px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: 2px #696969 dashed;
+}
+.markdownStyle blockquote p {
+  margin: 0;
 }

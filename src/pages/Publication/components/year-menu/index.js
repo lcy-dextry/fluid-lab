@@ -23,7 +23,7 @@ const YearMenu = memo(() => {
                             <NavLink
                                 key={item}
                                 className='show-year-item'
-                                to={`/publication/${item}`}
+                                to={`/publication/${(item+'').split(' ').join('')}`}
                                 onClick={e => { setYear(e.target.innerHTML) }}
                             >
                                 {item}

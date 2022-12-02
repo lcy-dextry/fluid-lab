@@ -1,12 +1,34 @@
-import React, { memo } from 'react'
+import React, { memo, useState, useEffect } from 'react'
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
+import moment from 'moment';
 // 组件
 import { HomeWrapper } from './style'
 import Carousel from './components/carousel'
 import Content from 'c/content'
 import NewsCard from './components/news-card'
+// 数据
+import { db } from '@/utils/cloudBase';
+import { getNews } from '@/redux/actions';
 
-const Home = memo(() => {
+const Home = memo(({
+    news,
+    getNews
+}) => {
+    const [text, setText] = useState([]);
+    // 获取
+    const getNewTexts = () => {
+        db.collection('news')
+            .limit(4)
+            .get()
+            .then(res => {
+                getNews(res.data);
+            });
+    };
+    useEffect(() => {
+        getNewTexts();
+        setText(news);
+    }, [news]);
     const component = (
         <>
             <div className='news-part'>
@@ -15,12 +37,18 @@ const Home = memo(() => {
                     <NavLink className='title-english' to='/news'>GROUP NEWS</NavLink>
                 </div>
                 <div className='news-list'>
-                    <NewsCard
-                        img='http://www-x-zhenleisonggroup-x-com.img.abc188.com/uploadfile/2022/1119/20221119120856395.jpg'
-                        title='恭喜黄江旭同学发表论文 “小猪口水的多相问题研究” 一篇！'
-                        text='恭喜黄江旭同学在《超级小猪》期刊（T1）发表猪猪论文一篇！太厉害了！太厉害了！太厉害了！太厉害了！'
-                        date='2022-11-23'
-                    />
+                    {
+                        text.map(item => {
+                            return (
+                                <NewsCard key={item._id}
+                                    img={item.img}
+                                    title={item.title}
+                                    date={moment(item.date).format('YYYY-MM-DD')}
+                                    location={item._id}
+                                />
+                            )
+                        })
+                    }
                 </div>
             </div>
         </>
@@ -34,5 +62,9 @@ const Home = memo(() => {
         </>
     )
 })
-
-export default Home
+export default connect(
+    state => ({
+        news: state.news
+    }),
+    { getNews }
+)(Home);

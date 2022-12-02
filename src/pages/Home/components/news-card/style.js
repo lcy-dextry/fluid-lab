@@ -21,12 +21,6 @@ export const NewsCardWrapper = styled.div`
         font-weight: 600;
         color: #0066FF;
     }
-    .news-text{
-        width: 270px;
-        height: 40px;
-        font-size: 12px;
-        color: #666;
-    }
     .news-date{
         margin-bottom: 10px;
         width: 270px;

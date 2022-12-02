@@ -41,13 +41,7 @@ export const MemberWrapper = styled.div`
     .active::after{
         background-color: #118BCE;
     }
-    .masters-list{
-        width: 1200px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-    .graduates-list{
+    .members-list{
         width: 1200px;
         display: flex;
         flex-wrap: wrap;
