@@ -22,6 +22,7 @@ const Home = memo(({
             .limit(4)
             .get()
             .then(res => {
+                console.log(res.data)
                 getNews(res.data);
             });
     };
