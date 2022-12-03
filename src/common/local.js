@@ -1,5 +1,5 @@
 // cloudBase ID
-export const env = 'fluid-admin-9gyaj7a1ec20b7ba';
+export const env = 'fluid-lab-admin-2g8xcgeh5fb66c3d';
 // Header
 // import { SearchOutlined } from '@ant-design/icons';
 export const headerLinks = [
