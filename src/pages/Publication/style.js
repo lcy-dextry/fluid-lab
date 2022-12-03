@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PublicationWrapper = styled.div`
     .right=part{
-        width: 880px;
+        width: 44rem;
     }
     .article-list{
         margin: 0;

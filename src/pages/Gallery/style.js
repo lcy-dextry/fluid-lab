@@ -2,34 +2,34 @@ import styled from "styled-components";
 
 export const GalleryWrapper = styled.div`
     .brief-msg{
-        margin-top: 20px;
-        width: 1200px;
-        height: 151px;
+        margin-top: 1rem;
+        width: 60rem;
+        height: 7.55rem;
         font-family: '宋体';
 
         .title-part{
-            height: 28px;
-            line-height:28px;
+            height: 1.4rem;
+            line-height:1.4rem;
             text-align: center;
-            font-size: 24px;
+            font-size: 1.2rem;
             font-weight: 600;
         }
         .pub-time{
-            height: 73px;
-            line-height:73px;
+            height: 3.65rem;
+            line-height:3.65rem;
             text-align: center;
-            font-size: 14px;
+            font-size: 0.7rem;
             color: #515151;
             border-bottom: 1px #d1d1d1 solid;
         }
     }
     .markdown-part{
-        width: 1200px;
+        width: 60rem;
 
         .markdownStyle{
             img{
-                width: 600px;
-                height: 400px;
+                width: 30rem;
+                height: 20rem;
             }
         }
     }

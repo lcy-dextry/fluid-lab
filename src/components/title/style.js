@@ -1,20 +1,20 @@
 import styled from "styled-components";
 
 export const TitleWrapper = styled.div`
-    width: 1200px;
-    margin-bottom: 50px;
+    width: 60rem;
+    margin-bottom: 2.5rem;
     .title{
-        height: 56px;
+        height: 2.8rem;
         position: relative;
-        font-size: 26px;
+        font-size: 1.3rem;
     }
     .title::after{
         position: absolute;
         bottom: 0px;
         left: 0px;
         content: '';
-        width: 38px;
+        width: 1.9rem;
         height: 0;
-        border-bottom: 4px solid #f09621;
+        border-bottom: 0.2rem solid #f09621;
     }
 `

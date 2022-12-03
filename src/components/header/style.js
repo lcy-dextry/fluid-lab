@@ -11,33 +11,33 @@ export const HeaderWrapper = styled.div`
     .wrap-v1{
         display: flex;
         justify-content: space-between;
-        height: 80px;
+        height: 4rem;
     }
     .lab-name{
-        width: 202px;
-        height: 80px;
+        width: 10.1rem;
+        height: 4rem;
         background-image: url(${require('@/assets/img/lab-name.png')});
         background-size: cover;
     }
     .guide-list{
         margin: 0;
-        width: 800px;
-        height: 80px;
+        width: 40rem;
+        height: 4rem;
         display: flex;
 
         .guide-item{
             flex: 1;
-            height: 80px;
-            line-height: 80px;
+            height: 4rem;
+            line-height: 4rem;
             text-align: center;
-            font-size: 16px; 
+            font-size: 0.8rem; 
             color: #FFF;
         }
         .active{
             background-color: #118BCE;
         }
         .search-icon{
-            font-size: 20px; 
+            font-size: 1rem; 
         }
     }
 `

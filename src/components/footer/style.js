@@ -2,9 +2,9 @@ import styled from "styled-components"
 
 export const FooterWrapper = styled.div`
     position: relative;
-    height: 120px;
+    height: 6rem;
     background-color: #005cbb;
-    margin-top: 50px;
+    margin-top: 2.5rem;
 
     .wrap-v1{
         position: absolute;
@@ -12,23 +12,23 @@ export const FooterWrapper = styled.div`
         right: 0;
         top: 0;
         bottom: 0;
-        height: 75px;
+        height: 3.8rem;
         margin: auto;
     }
     .footer-list{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        height: 50px;
+        height: 2.5rem;
         margin: 0;
         padding: 0;
         
         .footer-item{
-            width: 1200px;
-            height: 15px;
-            line-height: 15px;
+            width: 60rem;
+            height: 0.75rem;
+            line-height: 0.75rem;
             text-align: center;
-            font-size: 13px; 
+            font-size: 0.65rem; 
             color: white;
         }
     }

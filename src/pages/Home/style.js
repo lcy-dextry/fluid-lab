@@ -2,17 +2,17 @@ import styled from "styled-components"
 
 export const HomeWrapper = styled.div`
     .news-part{
-        width: 1200px;
+        width: 60rem;
     }
     .title-part{
-        margin: 50px 0;
+        margin: 2.5rem 0;
         display: flex;
         flex-wrap: wrap;
 
         a{
-            width: 1200px;
-            height: 30px;
-            line-height: 30px;
+            width: 60rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
             text-align: center;
             color: #545454;
 
@@ -23,30 +23,30 @@ export const HomeWrapper = styled.div`
     }
     .title-chinese{
         position: relative;
-        font-size: 25px;
+        font-size: 1.25rem;
         font-weight: 600;
         font-family: 'microsoft yahei','Open Sans', sans-serif;
-        letter-spacing: 5px;
+        letter-spacing: 0.25rem;
     }
     .title-english{
-        font-size: 15px;
+        font-size: 0.75rem;
         font-family: 'Consolas'
     }
     .title-chinese::before{
         position: absolute;
-        left: 400px;
+        left: 20rem;
         bottom: 0;
         content: '';
-        width: 80px;
+        width: 4rem;
         height: 1px;
         background-color: black;
     }
     .title-chinese::after{
         position: absolute;
-        right: 400px;
+        right: 20rem;
         bottom: 0;
         content: '';
-        width: 80px;
+        width: 4rem;
         height: 1px;
         background-color: black;
     }
@@ -55,7 +55,7 @@ export const HomeWrapper = styled.div`
         justify-content: flex-start;
 
         .sc-jSUZER{
-            margin-right: 40px;
+            margin-right: 2rem;
         }
         .sc-jSUZER:last-child{
             margin-right: 0;

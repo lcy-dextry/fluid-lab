@@ -14,7 +14,7 @@ const App = memo(() => {
     <Provider store={store}>
       <BrowserRouter>
         <Header />
-        <Suspense fallback={<Spin />}>
+        <Suspense fallback={<Spin className='loading' />}>
           <RoutesMap />
         </Suspense>
         <Footer />

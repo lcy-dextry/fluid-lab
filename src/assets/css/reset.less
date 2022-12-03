@@ -41,17 +41,18 @@ table {
 
 // 全局样式
 html {
+	font-size: 20px;
 	overflow-x: overlay;
 	overflow-y: overlay;
 }
 
 .wrap-v1 {
-	width: 1200px;
+	width: 60rem;
 	margin: 0 auto;
 }
 
 .content {
-	margin-top: 30px;
+	margin-top: 1.5rem;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -73,14 +74,14 @@ html {
 }
 
 .markdownStyle {
-	line-height: 32px;
-	font-size: 16px;
+	line-height: 1.6rem;
+	font-size: 0.8rem;
 	font-family: '宋体';
 	color: #000;
 }
 
 .markdownStyle table {
-	margin: 20px auto;
+	margin: 1rem auto;
 	border: 1px solid #000;
 	border-spacing: 0;
 	text-align: center;
@@ -88,33 +89,39 @@ html {
 
 .markdownStyle table th,
 .markdownStyle table td {
-	padding: 6px 14px;
+	padding: 0.3rem 0.7rem;
 	border: 1px solid #000;
 }
 
 .markdownStyle code {
 	color: red;
 	background-color: #eeeeee;
-	padding: 0 4px;
+	padding: 0 0.2rem;
 }
 
 /* 图片 */
 .markdownStyle p img {
 	display: block;
 	max-width: 100%;
-	margin: 14px auto;
-	border-radius: 12px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+	margin: 0.7rem auto;
+	border-radius: 0.6rem;
+	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.6);
 }
 
 .markdownStyle blockquote {
 	background-color: #dfdfdf;
-	padding: 14px 40px;
-	font-size: 18px;
-	border-radius: 20px;
+	padding: 0.7rem 2rem;
+	font-size: 0.9rem;
+	border-radius: 1rem;
 	border: 2px rgb(105, 105, 105) dashed;
 }
 
 .markdownStyle blockquote p {
 	margin: 0;
+}
+
+.loading {
+	position: absolute !important;
+	top: calc(50vh);
+	left: calc(50vw);
 }

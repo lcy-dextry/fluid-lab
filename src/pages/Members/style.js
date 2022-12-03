@@ -5,18 +5,18 @@ export const MemberWrapper = styled.div`
         display: flex;
         justify-content: center;
         width: 100%;
-        height: 65px;
-        border-bottom: 2px solid #F1F1F1;
+        height: 3.25rem;
+        border-bottom: 0.1rem solid #F1F1F1;
     }
     .guide-item{
         position: relative;
-        padding: 0 6px 3px;
-        margin: 0 15px;
-        width: 108px;
-        height: 65px;
-        line-height: 65px;
+        padding: 0 0.3rem 0.15rem;
+        margin: 0 0.75rem;
+        width: 5.4rem;
+        height: 3.25rem;
+        line-height: 3.25rem;
         text-align: center; 
-        font-size: 16px;
+        font-size: 0.8rem;
         color: #333;
 
         &:hover{
@@ -31,8 +31,8 @@ export const MemberWrapper = styled.div`
         bottom: 0;
         left: 0;
         content: '';
-        width: 108px;
-        height: 3px;
+        width: 5.4rem;
+        height: 0.15rem;
         background-color: transparent;
     }
     .active{
@@ -42,7 +42,7 @@ export const MemberWrapper = styled.div`
         background-color: #118BCE;
     }
     .members-list{
-        width: 1200px;
+        width: 60rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
