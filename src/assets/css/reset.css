@@ -34,12 +34,11 @@ table {
   border-spacing: 0;
 }
 html {
-  font-size: 20px;
   overflow-x: overlay;
   overflow-y: overlay;
 }
 .wrap-v1 {
-  width: 60rem;
+  width: 78.125vw;
   margin: 0 auto;
 }
 .content {
