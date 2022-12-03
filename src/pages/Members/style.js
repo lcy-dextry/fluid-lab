@@ -42,7 +42,7 @@ export const MemberWrapper = styled.div`
         background-color: #118BCE;
     }
     .members-list{
-        width: 60rem;
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;

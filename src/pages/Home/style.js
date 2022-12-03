@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const HomeWrapper = styled.div`
     .news-part{
-        width: 60rem;
+        width: 100%;
     }
     .title-part{
         margin: 2.5rem 0;
@@ -10,7 +10,7 @@ export const HomeWrapper = styled.div`
         flex-wrap: wrap;
 
         a{
-            width: 60rem;
+            width: 100%;
             height: 1.5rem;
             line-height: 1.5rem;
             text-align: center;
@@ -55,7 +55,7 @@ export const HomeWrapper = styled.div`
         justify-content: flex-start;
 
         .sc-jSUZER{
-            margin-right: 2rem;
+            margin-right: 2.5vw;
         }
         .sc-jSUZER:last-child{
             margin-right: 0;

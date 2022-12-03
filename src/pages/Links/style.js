@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const LinksWrapper = styled.div`
     .title{
-        width: 60rem;
+        width: 100%;
         font-size: 0.8rem;
         font-weight: 700; 
     }
     .link-box{
         margin-top: 1rem;
-        width: 60rem;
+        width: 100%;
         padding: 1.5rem 0.5rem 0.5rem;
         background-color: rgb(243, 243, 243);
         box-shadow: rgb(0 0 0 / 40%) 0px 0px 0.5rem 0px;

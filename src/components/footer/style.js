@@ -24,7 +24,7 @@ export const FooterWrapper = styled.div`
         padding: 0;
         
         .footer-item{
-            width: 60rem;
+            width: 100%;
             height: 0.75rem;
             line-height: 0.75rem;
             text-align: center;

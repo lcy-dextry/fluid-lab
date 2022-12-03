@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const DetailNewWrapper = styled.div`
     .brief-msg{
         margin-top: 1rem;
-        width: 60rem;
+        width: 100%;
         height: 7.55rem;
         font-family: '宋体';
 
@@ -24,7 +24,7 @@ export const DetailNewWrapper = styled.div`
         }
     }
     .markdown-part{
-        width: 60rem;
+        width: 100%;
 
         .markdownStyle{
             img{

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TitleWrapper = styled.div`
-    width: 60rem;
+    width: 100%;
     margin-bottom: 2.5rem;
     .title{
         height: 2.8rem;

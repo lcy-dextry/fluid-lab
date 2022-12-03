@@ -2,12 +2,11 @@ import styled from "styled-components";
 
 export const StudentCardWrapper = styled.div`
     display: flex;
-    width: 16.5rem;
-    height: 6.7rem;
+    width: 18.4rem;
+    height: 8.6rem;
     padding: 0.95rem;
-    margin-right: 2.4rem;
+    margin-right: 3vw;
     margin-bottom: 2rem;
-    box-sizing: content-box;
     background-color: #f2f7fb;
 
     &:nth-child(3n){
