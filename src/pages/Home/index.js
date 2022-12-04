@@ -8,7 +8,7 @@ import Carousel from './components/carousel'
 import Content from 'c/content'
 import NewsCard from './components/news-card'
 // 数据
-import { db } from '@/utils/cloudBase';
+import { db, auth } from '@/utils/cloudBase';
 import { getNews } from '@/redux/actions';
 
 const Home = memo(({
@@ -22,7 +22,6 @@ const Home = memo(({
             .limit(4)
             .get()
             .then(res => {
-                console.log(res.data)
                 getNews(res.data);
             });
     };
