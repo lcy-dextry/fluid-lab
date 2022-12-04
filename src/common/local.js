@@ -1,5 +1,7 @@
 // cloudBase ID
 export const env = 'fluid-lab-admin-2g8xcgeh5fb66c3d';
+export const email = 'wangleir1989@126.com'
+export const password = 'Lattice753*#^'
 // Header
 // import { SearchOutlined } from '@ant-design/icons';
 export const headerLinks = [

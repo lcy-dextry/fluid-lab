@@ -8,19 +8,13 @@ import Carousel from './components/carousel'
 import Content from 'c/content'
 import NewsCard from './components/news-card'
 // 数据
-import { db, auth } from '@/utils/cloudBase';
+import { db } from '@/utils/cloudBase';
 import { getNews } from '@/redux/actions';
 
 const Home = memo(({
     news,
     getNews
 }) => {
-    db.collection('news')
-        .limit(4)
-        .get()
-        .then(res => {
-            console.log(res)
-        });
     const [text, setText] = useState([]);
     // 获取
     const getNewTexts = () => {
@@ -69,11 +63,8 @@ const Home = memo(({
     )
 })
 export default connect(
-    // state => ({
-    //     news: state.news
-    // }),
-    state => {
-        console.log(state)
-    },
+    state => ({
+        news: state.news
+    }),
     { getNews }
 )(Home);
