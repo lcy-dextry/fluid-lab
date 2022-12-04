@@ -28,6 +28,7 @@ export function makeList(text) {
         obj.type = item.type
         obj.location = item.location
         res.push(obj)
+        return item
     })
     return res
 }

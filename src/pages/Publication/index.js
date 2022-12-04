@@ -33,7 +33,7 @@ const Publication = memo(({
     const [nowPapers, setNowPapers] = useState([])
     useEffect(() => {
         const id = currentYear;
-        const thePapers = papers.filter(item => { return item.year == id });
+        const thePapers = papers.filter(item => { return item.year === id });
         if (thePapers) {
             setNowPapers(thePapers);
         }

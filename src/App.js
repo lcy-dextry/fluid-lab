@@ -1,4 +1,4 @@
-import React, { memo, Suspense } from 'react'
+import React, { memo, Suspense, useEffect } from 'react'
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 // 数据
@@ -18,7 +18,7 @@ const App = memo(() => {
       .then(() => {
         console.log('登陆成功')
       })
-  }, auth.hasLoginState());
+  }, [auth.hasLoginState()]);
   return (
     <Provider store={store}>
       <BrowserRouter>
