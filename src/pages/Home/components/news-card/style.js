@@ -7,15 +7,15 @@ export const NewsCardWrapper = styled.div`
     height: 15rem;
 
     .img-part{
-        width: 13.5rem;
-        height: 9rem;
+        width: 100%;
+        height: 60%;
     }
     .news-msg{
-        width: 14.5rem;
+        width: 100%;
     }
     .news-title{
         margin: 0.25rem 0 0.75rem;
-        width: 13.5rem;
+        width: 100%;
         height: 1.3rem;
         font-size: 0.75rem;
         font-weight: 600;
@@ -23,7 +23,7 @@ export const NewsCardWrapper = styled.div`
     }
     .news-date{
         margin-bottom: 0.5rem;
-        width: 13.5rem;
+        width: 100%;
         height: 0.9rem;
         line-height: 0.9rem;
         font-size: 0.6rem;
