@@ -16,7 +16,7 @@ const App = memo(() => {
     auth
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        
+        console.log('登陆成功')
       })
   }, auth.hasLoginState());
   return (
