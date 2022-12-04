@@ -2,6 +2,7 @@
 export const env = 'fluid-lab-admin-2g8xcgeh5fb66c3d';
 export const email = 'wangleir1989@126.com'
 export const password = 'Lattice753*#^'
+export const adminURL = 'http://fluid-lab-admin-2g8xcgeh5fb66c3d-1315570145.tcloudbaseapp.com/'
 // Header
 // import { SearchOutlined } from '@ant-design/icons';
 export const headerLinks = [
