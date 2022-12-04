@@ -7,7 +7,7 @@ import { CalendarOutlined } from '@ant-design/icons';
 const NewsCard = memo((props) => {
     const { img, title, date, location } = props
     return (
-        <NewsCardWrapper>
+        <NewsCardWrapper className='news-item'>
             <img className='img-part' alt='' src={img} />
             <div className='news-msg'>
                 <NavLink className='news-title nowrap-one-line'

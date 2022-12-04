@@ -54,10 +54,10 @@ export const HomeWrapper = styled.div`
         display: flex;
         justify-content: flex-start;
 
-        .sc-jSUZER{
+        .news-item{
             margin-right: 38px;
         }
-        .sc-jSUZER:last-child{
+        .news-item:last-child{
             margin-right: 0;
         }
     }

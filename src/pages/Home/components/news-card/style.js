@@ -8,9 +8,10 @@ export const NewsCardWrapper = styled.div`
 
     .img-part{
         width: 100%;
-        height: 60%;
+        object-fit: cover;
     }
     .news-msg{
+        margin-top: 10px;
         width: 100%;
     }
     .news-title{
