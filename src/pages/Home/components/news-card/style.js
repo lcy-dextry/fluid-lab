@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const NewsCardWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    width: 13.5rem;
+    width: calc(100% / 4 - 38px * 3 / 4);
     height: 15rem;
 
     .img-part{

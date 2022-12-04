@@ -55,7 +55,7 @@ export const HomeWrapper = styled.div`
         justify-content: flex-start;
 
         .sc-jSUZER{
-            margin-right: 2.5vw;
+            margin-right: 38px;
         }
         .sc-jSUZER:last-child{
             margin-right: 0;
