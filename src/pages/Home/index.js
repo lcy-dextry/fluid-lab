@@ -15,6 +15,12 @@ const Home = memo(({
     news,
     getNews
 }) => {
+    db.collection('news')
+        .limit(4)
+        .get()
+        .then(res => {
+            console.log(res)
+        });
     const [text, setText] = useState([]);
     // 获取
     const getNewTexts = () => {
@@ -63,8 +69,11 @@ const Home = memo(({
     )
 })
 export default connect(
-    state => ({
-        news: state.news
-    }),
+    // state => ({
+    //     news: state.news
+    // }),
+    state => {
+        console.log(state)
+    },
     { getNews }
 )(Home);
