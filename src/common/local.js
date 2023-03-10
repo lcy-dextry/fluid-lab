@@ -1,6 +1,6 @@
 // cloudBase ID
 export const env = 'fluid-lab-admin-0gjtvps336032515';
-export const email = 'leiwang@cug.edu.cn'
+export const email = 'wangleir1989@126.com'
 export const password = 'Lattice753*#^'
 export const adminURL = 'https://fluid-lab-admin-0gjtvps336032515-1315570145.tcloudbaseapp.com/'
 // Header
@@ -13,7 +13,6 @@ export const headerLinks = [
     { title: '组内成员', link: '/members' },
     { title: '组内活动', link: '/activity' },
     { title: '联系我们', link: '/links' },
-    // { title: '搜索', link: '/search', component: <SearchOutlined /> }
 ]
 // Footer
 export const footerItems = [
