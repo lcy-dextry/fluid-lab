@@ -1,8 +1,8 @@
 // cloudBase ID
-export const env = 'fluid-lab-admin-2g8xcgeh5fb66c3d';
-export const email = 'wangleir1989@126.com'
+export const env = 'fluid-lab-admin-0gjtvps336032515';
+export const email = 'leiwang@cug.edu.cn'
 export const password = 'Lattice753*#^'
-export const adminURL = 'http://fluid-lab-admin-2g8xcgeh5fb66c3d-1315570145.tcloudbaseapp.com/'
+export const adminURL = 'https://fluid-lab-admin-0gjtvps336032515-1315570145.tcloudbaseapp.com/'
 // Header
 // import { SearchOutlined } from '@ant-design/icons';
 export const headerLinks = [
@@ -20,7 +20,7 @@ export const footerItems = [
     { title: '版权', text: '© Copyright 2022 by Fluid Laboratory' },
     { title: '地址', text: '地址：湖北省武汉市洪山区鲁磨路388号' },
 ]
-export const certification = '苏ICP备19065468号-1'
+export const certification = '鄂ICP备2023002151号'
 // Members
 export const memberList = [
     { type: '在读研究生', location: 'master' },

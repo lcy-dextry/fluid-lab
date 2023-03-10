@@ -21,7 +21,7 @@ const Footer = memo(() => {
                         })
                     }
                 </ul>
-                <a className='certification' href='http://tanlab.org.cn/'>{certification}</a>
+                <a className='certification' href='https://beian.miit.gov.cn/'>{certification}</a>
             </div>
         </FooterWrapper>
     )
