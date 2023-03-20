@@ -16,6 +16,12 @@ module.exports = {
             }
         }
     ],
+    webpack: {
+        alias: {
+            '@': resolve('src'),
+            'c': resolve('src/components')
+        }
+    },
     style: {
         postcss: {
             mode: 'extends',
@@ -36,11 +42,5 @@ module.exports = {
                 },
             },
         },
-    },
-    webpack: {
-        alias: {
-            '@': resolve('src'),
-            'c': resolve('src/components')
-        }
     }
 }
