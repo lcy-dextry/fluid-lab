@@ -3,12 +3,12 @@ import { NavLink } from 'react-router-dom';
 // 数据
 import { headerLinks } from '@/common/local'
 import { adminURL } from '@/common/local';
-// 组件
-import { HeaderWrapper } from './style'
+// 样式
+import './style.less'
 
 const Header = memo(() => {
     return (
-        <HeaderWrapper>
+        <div className='header-wrapper'>
             <div className='wrap-v1'>
                 <a href={adminURL} target='_blank'><div className='lab-name' /></a>
                 <ul className='guide-list'>
@@ -27,7 +27,7 @@ const Header = memo(() => {
                     }
                 </ul>
             </div>
-        </HeaderWrapper>
+        </div>
     )
 })
 

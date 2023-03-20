@@ -1,15 +1,15 @@
 import React, { memo, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-// 组件
-import { GalleyMenuWrapper } from './style'
 // 数据
 import { galleryList } from '@/common/local'
+// 样式
+import './style.less'
 
 const GalleyMenu = memo(() => {
     const [galley, setGalley] = useState('成员合影')
 
     return (
-        <GalleyMenuWrapper>
+        <div className='galley-menu-wrapper'>
             <div className='choosen-one'>{galley}</div>
             <ul className='show-galley-list'>
                 {
@@ -27,7 +27,7 @@ const GalleyMenu = memo(() => {
                     })
                 }
             </ul>
-        </GalleyMenuWrapper>
+        </div>
     )
 })
 export default GalleyMenu

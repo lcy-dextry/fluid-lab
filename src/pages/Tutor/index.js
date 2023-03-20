@@ -5,11 +5,12 @@ import { useParams } from 'react-router-dom'
 import { marked } from 'marked';
 // 组件
 import Banner from 'c/banner'
-import { TutorWrapper } from './style'
 // 数据
 import { db } from '@/utils/cloudBase';
 import { getTutorText } from '@/redux/actions';
 import { makeList } from '@/utils/functions';
+// 样式
+import './style.less'
 
 const Tutor = memo(({
     texts,
@@ -55,7 +56,7 @@ const Tutor = memo(({
     return (
         <>
             <Banner />
-            <TutorWrapper>
+            <div className='tutor-wrapper'>
                 <ul className='guide-list'>
                     {
                         makeList(text).map(item => {
@@ -79,7 +80,7 @@ const Tutor = memo(({
                         }}
                     />
                 </div>
-            </TutorWrapper>
+            </div>
         </>
     )
 })

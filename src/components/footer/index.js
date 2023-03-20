@@ -1,12 +1,12 @@
 import React, { memo } from 'react'
-// 组件
-import { FooterWrapper } from './style'
 // 数据
 import { certification, footerItems } from '@/common/local'
+// 样式
+import './style.less'
 
 const Footer = memo(() => {
     return (
-        <FooterWrapper>
+        <div className='footer-wrapper'>
             <div className='wrap-v1'>
                 <ul className='footer-list'>
                     {
@@ -23,7 +23,7 @@ const Footer = memo(() => {
                 </ul>
                 <a className='certification' href='https://beian.miit.gov.cn/'>{certification}</a>
             </div>
-        </FooterWrapper>
+        </div>
     )
 })
 export default Footer

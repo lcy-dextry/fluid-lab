@@ -1,12 +1,12 @@
 import moment from 'moment/moment'
 import React, { memo } from 'react'
-// 组件
-import { StudentCardWrapper } from './style'
+// 样式
+import './style.less'
 
 const StudentCard = memo((props) => {
     const { img = '', name = '', year = '', email = '' } = props
     return (
-        <StudentCardWrapper>
+        <div className='student-card-wrapper'>
             <img className='photo' alt='' src={img} />
             <div className='stu-msg'>
                 <div className='name'>
@@ -16,7 +16,7 @@ const StudentCard = memo((props) => {
                     {email}
                 </div>
             </div>
-        </StudentCardWrapper>
+        </div>
     )
 })
 

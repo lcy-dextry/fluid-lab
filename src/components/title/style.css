@@ -1,0 +1,18 @@
+.title-wrapper {
+  width: 100%;
+  margin-bottom: 100px;
+}
+.title-wrapper .title {
+  height: 112px;
+  position: relative;
+  font-size: 52px;
+}
+.title-wrapper .title::after {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  content: '';
+  width: 76px;
+  height: 0;
+  border-bottom: 8px solid #f09621;
+}

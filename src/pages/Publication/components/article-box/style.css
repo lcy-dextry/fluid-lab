@@ -1,0 +1,16 @@
+.articleBox-wrapper {
+  padding: 30px 20px 40px 20px;
+  width: 1760px;
+  border-bottom: 2px dashed #E2E2E2;
+}
+.articleBox-wrapper:hover {
+  background-color: #FAFAFA;
+}
+.articleBox-wrapper .article-msg {
+  width: 1720px;
+  font-size: 24px;
+  font-family: 'Microsoft Yahei';
+  color: #666;
+  line-height: 56px;
+  word-wrap: break-word;
+}

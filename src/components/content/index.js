@@ -1,14 +1,14 @@
 import React, { memo } from 'react';
-// 组件
-import { ContentWrapper } from './style'
+// 样式
+import './style.less'
 
 const Content = memo((props) => {
     const { Component = '' } = props;
 
     return (
-        <ContentWrapper className='wrap-v1'>
+        <div className='wrap-v1'>
             {Component}
-        </ContentWrapper>
+        </div>
     )
 })
 export default Content

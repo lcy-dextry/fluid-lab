@@ -1,17 +1,17 @@
 import React, { memo } from 'react'
 import { HomeFilled } from '@ant-design/icons';
-// 组件
-import { LocationBoxWrapper } from './style'
+// 样式
+import './style.less'
 
 const LocationBox = memo((props) => {
     const { year } = props
     return (
-        <LocationBoxWrapper>
+        <div className='location-box-wrapper'>
             <HomeFilled />
             <div className='text'>
                 {`您现在的位置： → 论文发表 → ${year}`}
             </div>
-        </LocationBoxWrapper>
+        </div>
     )
 })
 

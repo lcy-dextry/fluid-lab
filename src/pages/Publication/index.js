@@ -4,13 +4,14 @@ import { useParams } from 'react-router-dom'
 // 组件
 import Banner from 'c/banner'
 import Content from 'c/content'
-import { PublicationWrapper } from './style'
 import YearMenu from './components/year-menu'
 import LocationBox from './components/location-box'
 import ArticleBox from './components/article-box'
 // 数据
 import { db } from '@/utils/cloudBase';
 import { getPublication } from '@/redux/actions'
+// 样式
+import './style.less'
 
 const Publication = memo(({
     papers,
@@ -61,9 +62,9 @@ const Publication = memo(({
     return (
         <>
             <Banner />
-            <PublicationWrapper>
+            <div className='publication-wrapper'>
                 <Content Component={component} />
-            </PublicationWrapper>
+            </div>
         </>
 
     )

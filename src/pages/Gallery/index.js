@@ -4,12 +4,13 @@ import { marked } from 'marked';
 import qs from 'qs';
 import moment from 'moment';
 // 组件
-import { GalleryWrapper } from './style'
 import Banner from 'c/banner'
 import Content from 'c/content'
 // 数据
 import { db } from '@/utils/cloudBase';
 import { getActivity } from '@/redux/actions';
+// 样式
+import './style.less'
 
 const Gallery = memo(({
     activity,
@@ -72,9 +73,9 @@ const Gallery = memo(({
     return (
         <>
             <Banner />
-            <GalleryWrapper>
+            <div className='gallery-wrapper'>
                 <Content Component={component} />
-            </GalleryWrapper>
+            </div>
         </>
 
     )

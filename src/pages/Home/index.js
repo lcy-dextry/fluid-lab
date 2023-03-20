@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import moment from 'moment';
 // 组件
-import { HomeWrapper } from './style'
 import Carousel from './components/carousel'
 import Content from 'c/content'
 import NewsCard from './components/news-card'
 // 数据
 import { db } from '@/utils/cloudBase';
 import { getNews } from '@/redux/actions';
+// 样式
+import './style.less'
 
 const Home = memo(({
     news,
@@ -56,9 +57,9 @@ const Home = memo(({
     return (
         <>
             <Carousel />
-            <HomeWrapper>
+            <div className='home-wrapper'>
                 <Content Component={component} />
-            </HomeWrapper>
+            </div>
         </>
     )
 })

@@ -1,0 +1,54 @@
+.member-wrapper {
+    .guide-list {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 130px;
+        border-bottom: 4px solid #F1F1F1;
+    }
+
+    .guide-item {
+        position: relative;
+        padding: 0 12px 6px;
+        margin: 0 30px;
+        width: 216px;
+        height: 130px;
+        line-height: 130px;
+        text-align: center;
+        font-size: 32px;
+        color: #333;
+
+        &:hover {
+            color: #118BCE;
+        }
+
+        &:hover::after {
+            background-color: #118BCE;
+        }
+    }
+
+    .guide-item::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: '';
+        width: 216px;
+        height: 6px;
+        background-color: transparent;
+    }
+
+    .active {
+        color: #118BCE;
+    }
+
+    .active::after {
+        background-color: #118BCE;
+    }
+
+    .members-list {
+        width: 2400px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}

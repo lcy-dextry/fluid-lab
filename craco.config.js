@@ -16,6 +16,27 @@ module.exports = {
             }
         }
     ],
+    style: {
+        postcss: {
+            mode: 'extends',
+            loaderOptions: {
+                postcssOptions: {
+                    ident: 'postcss',
+                    plugins: [
+                        [
+                            'postcss-pxtorem',
+                            {
+                                rootValue: 153.6, // 根元素字体大小
+                                unitPrecision: 3,
+                                // propList: ['width', 'height']
+                                propList: ['*']
+                            },
+                        ],
+                    ],
+                },
+            },
+        },
+    },
     webpack: {
         alias: {
             '@': resolve('src'),

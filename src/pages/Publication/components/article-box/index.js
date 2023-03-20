@@ -1,15 +1,15 @@
 import React, { memo } from 'react'
-// 组件
-import { ArticleBoxWrapper } from './style'
+// 样式
+import './style.less'
 
 const ArticleBox = memo((props) => {
     const { text } = props
     return (
-        <ArticleBoxWrapper>
+        <div className='articleBox-wrapper'>
             <div className='article-msg'>
                 {text}
             </div>
-        </ArticleBoxWrapper>
+        </div>
     )
 })
 

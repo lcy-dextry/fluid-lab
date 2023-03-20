@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { NavLink } from 'react-router-dom';
 // 组件
-import { ActivityWrapper } from './style'
 import Banner from 'c/banner';
 import Content from 'c/content'
 import GalleyMenu from './components/gallery-menu';
@@ -13,6 +12,8 @@ import { galleryList } from '@/common/local';
 import { findGalleryName } from '@/utils/functions';
 import { db } from '@/utils/cloudBase';
 import { getActivity } from '@/redux/actions';
+// 样式
+import './style.less'
 
 const Activity = memo(({
     activity,
@@ -68,9 +69,9 @@ const Activity = memo(({
     return (
         <>
             <Banner />
-            <ActivityWrapper>
+            <div className='activity-wrapper'>
                 <Content Component={component} />
-            </ActivityWrapper>
+            </div>
         </>
     )
 })

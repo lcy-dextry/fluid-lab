@@ -4,12 +4,13 @@ import { marked } from 'marked';
 import { useParams } from 'react-router-dom'
 import moment from 'moment';
 // 组件
-import { DetailNewWrapper } from './style'
 import Banner from 'c/banner'
 import Content from 'c/content'
 // 数据
 import { db } from '@/utils/cloudBase';
 import { getNews } from '@/redux/actions';
+// 样式
+import './style.less'
 
 const DetailNew = memo(({
     news,
@@ -73,9 +74,9 @@ const DetailNew = memo(({
     return (
         <>
             <Banner />
-            <DetailNewWrapper>
+            <div className='detail-new-wrapper'>
                 <Content Component={component} />
-            </DetailNewWrapper>
+            </div>
         </>
     )
 })

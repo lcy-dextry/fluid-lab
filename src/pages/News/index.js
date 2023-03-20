@@ -2,13 +2,14 @@ import React, { memo, useState, useEffect } from 'react'
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 // 组件
-import { NewsWrapper } from './style'
 import Banner from 'c/banner'
 import Content from 'c/content'
 import { HomeFilled } from '@ant-design/icons';
 // 数据
 import { db } from '@/utils/cloudBase';
 import { getNews } from '@/redux/actions';
+// 样式
+import './style.less'
 
 const News = memo(({
     news,
@@ -59,9 +60,9 @@ const News = memo(({
     return (
         <>
             <Banner />
-            <NewsWrapper>
+            <div className='news-wrapper'>
                 <Content Component={component} />
-            </NewsWrapper>
+            </div>
         </>
     )
 })

@@ -1,0 +1,45 @@
+.header-wrapper {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #005cbb;
+
+    .wrap-v1 {
+        display: flex;
+        justify-content: space-between;
+        height: 160px;
+    }
+
+    .lab-name {
+        width: 404px;
+        height: 160px;
+        background-image: url('../../assets/img/lab-name.png');
+        background-size: cover;
+    }
+
+    .guide-list {
+        margin: 0;
+        width: 1600px;
+        height: 160px;
+        display: flex;
+
+        .guide-item {
+            flex: 1;
+            height: 160px;
+            line-height: 160px;
+            text-align: center;
+            font-size: 36px;
+            color: #FFF;
+        }
+
+        .active {
+            background-color: #118BCE;
+        }
+
+        .search-icon {
+            font-size: 40px;
+        }
+    }
+}

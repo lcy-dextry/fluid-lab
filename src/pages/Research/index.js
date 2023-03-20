@@ -1,15 +1,16 @@
 import React, { memo } from 'react'
 // 组件
 import Banner from 'c/banner'
-import { ResearchWrapper } from './style'
+// 样式
+import './style.less'
 
 const Research = memo(() => {
     return (
         <>
             <Banner />
-            <ResearchWrapper>
+            <div className='research-wrapper'>
                 Research
-            </ResearchWrapper>
+            </div>
         </>
 
     )

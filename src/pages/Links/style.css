@@ -1,0 +1,27 @@
+.links-wrapper .title {
+  margin-top: 128px;
+  width: 2400px;
+  font-size: 32px;
+  font-weight: 700;
+}
+.links-wrapper .link-box {
+  margin-top: 40px;
+  width: 2400px;
+  padding: 60px 20px 20px;
+  background-color: #f3f3f3;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0.5rem 0px;
+  border-top: 4px solid #118BCE;
+}
+.links-wrapper .link-list {
+  width: 2360px;
+  padding: 20px;
+  background-color: #fbfbfb;
+}
+.links-wrapper .link-item {
+  width: 2320px;
+  height: 76px;
+  line-height: 76px;
+  border-bottom: 2px solid #dddddd;
+  font-size: 32px;
+  color: #545454;
+}

@@ -1,14 +1,15 @@
 import React, { memo } from 'react'
 // 组件
-import { CarouselWrapper } from './style'
 import { Carousel } from 'antd';
+// 样式
+import './style.less'
 
 const CarouselBox = memo(() => {
     return (
-        <CarouselWrapper>
+        <div className='carousel-wrapper'>
             <Carousel autoplay>
             </Carousel>
-        </CarouselWrapper>
+        </div>
     )
 })
 export default CarouselBox

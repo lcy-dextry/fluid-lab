@@ -1,0 +1,34 @@
+.news-item {
+  display: flex;
+  flex-wrap: wrap;
+  width: 540px;
+  height: 600px;
+}
+.news-item .img-part {
+  width: 540px;
+  height: 500px;
+  object-fit: cover;
+}
+.news-item .news-msg {
+  margin-top: 20px;
+  width: 540px;
+}
+.news-item .news-title {
+  margin: 10px 0 30px;
+  width: 540px;
+  height: 52px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #0066FF;
+}
+.news-item .news-date {
+  margin-bottom: 20px;
+  width: 540px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 24px;
+  color: #666;
+}
+.news-item .news-date .anticon-calendar {
+  margin-right: 10px;
+}

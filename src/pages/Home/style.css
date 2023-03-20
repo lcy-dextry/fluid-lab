@@ -1,0 +1,51 @@
+.home-wrapper .news-part {
+  width: 2400px;
+}
+.home-wrapper .title-part {
+  margin: 100px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.home-wrapper .title-part a {
+  width: 2400px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #545454;
+}
+.home-wrapper .title-part a:hover {
+  color: #005cbb;
+}
+.home-wrapper .title-chinese {
+  position: relative;
+  font-size: 50px;
+  font-weight: 600;
+  font-family: 'microsoft yahei', 'Open Sans', sans-serif;
+  letter-spacing: 10px;
+}
+.home-wrapper .title-english {
+  font-size: 30px;
+  font-family: 'Consolas';
+}
+.home-wrapper .title-chinese::before {
+  position: absolute;
+  left: 800px;
+  bottom: 0;
+  content: '';
+  width: 160px;
+  height: 2px;
+  background-color: black;
+}
+.home-wrapper .title-chinese::after {
+  position: absolute;
+  right: 800px;
+  bottom: 0;
+  content: '';
+  width: 160px;
+  height: 2px;
+  background-color: black;
+}
+.home-wrapper .news-list {
+  display: flex;
+  justify-content: space-between;
+}

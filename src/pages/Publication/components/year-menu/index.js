@@ -1,11 +1,11 @@
 import React, { memo, useState } from 'react'
 import moment from 'moment'
 import { NavLink } from 'react-router-dom'
-// 组件
-import { YearMenuWrapper } from './style'
 // 数据
 import { date } from '@/common/local'
 import { yearList } from '@/utils/functions'
+// 样式
+import './style.less'
 
 const YearMenu = memo(() => {
     const max_year = moment().year()
@@ -14,7 +14,7 @@ const YearMenu = memo(() => {
     const [year, setYear] = useState(max_year)
 
     return (
-        <YearMenuWrapper>
+        <div className='year-menu-wrapper'>
             <div className='choosen-one'>{year}</div>
             <ul className='show-year-list'>
                 {
@@ -23,7 +23,7 @@ const YearMenu = memo(() => {
                             <NavLink
                                 key={item}
                                 className='show-year-item'
-                                to={`/publication/${(item+'').split(' ').join('')}`}
+                                to={`/publication/${(item + '').split(' ').join('')}`}
                                 onClick={e => { setYear(e.target.innerHTML) }}
                             >
                                 {item}
@@ -32,7 +32,7 @@ const YearMenu = memo(() => {
                     })
                 }
             </ul>
-        </YearMenuWrapper>
+        </div>
     )
 })
 export default YearMenu

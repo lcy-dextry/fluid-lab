@@ -1,0 +1,39 @@
+.header-wrapper {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #005cbb;
+}
+.header-wrapper .wrap-v1 {
+  display: flex;
+  justify-content: space-between;
+  height: 160px;
+}
+.header-wrapper .lab-name {
+  width: 404px;
+  height: 160px;
+  background-image: url('../../assets/img/lab-name.png');
+  background-size: cover;
+}
+.header-wrapper .guide-list {
+  margin: 0;
+  width: 1600px;
+  height: 160px;
+  display: flex;
+}
+.header-wrapper .guide-list .guide-item {
+  flex: 1;
+  height: 160px;
+  line-height: 160px;
+  text-align: center;
+  font-size: 36px;
+  color: #FFF;
+}
+.header-wrapper .guide-list .active {
+  background-color: #118BCE;
+}
+.header-wrapper .guide-list .search-icon {
+  font-size: 40px;
+}

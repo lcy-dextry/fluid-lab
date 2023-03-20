@@ -1,15 +1,15 @@
 import React, { memo } from 'react'
-// 组件
-import { TitleWrapper } from './style'
+// 样式
+import './style.less'
 
 const Title = memo((props) => {
     const { title = '' } = props
     return (
-        <TitleWrapper>
+        <div className='title-wrapper'>
             <div className='title'>
                 {title}
             </div>
-        </TitleWrapper>
+        </div>
     )
 })
 

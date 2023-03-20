@@ -1,0 +1,52 @@
+.galley-menu-wrapper {
+  width: 490px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.galley-menu-wrapper .choosen-one {
+  padding-left: 30px;
+  width: 490px;
+  height: 110px;
+  line-height: 110px;
+  font-size: 32px;
+  font-weight: 600;
+  font-family: '微软雅黑';
+  background-color: #118BCE;
+  color: white;
+}
+.galley-menu-wrapper .show-galley-list {
+  padding: 0;
+  width: 490px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.galley-menu-wrapper .show-galley-list .show-galley-item {
+  position: relative;
+  padding-left: 60px;
+  width: 490px;
+  height: 80px;
+  border: 2px solid white;
+  border-left: none;
+  line-height: 80px;
+  font-size: 32px;
+  font-weight: 600;
+  font-family: '微软雅黑';
+  background-color: #f2f7fb;
+  color: #666;
+}
+.galley-menu-wrapper .show-galley-list .show-galley-item:hover::after {
+  background-color: #118BCE;
+}
+.galley-menu-wrapper .show-galley-list .show-galley-item::after {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  content: '';
+  width: 10px;
+  height: 52px;
+  background-color: transparent;
+}
+.galley-menu-wrapper .show-galley-list .active::after {
+  background-color: #118BCE;
+}

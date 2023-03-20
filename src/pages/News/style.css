@@ -1,0 +1,59 @@
+.news-wrapper {
+  margin-top: 128px;
+}
+.news-wrapper .left-part {
+  padding-left: 30px;
+  width: 490px;
+  height: 110px;
+  line-height: 110px;
+  font-size: 32px;
+  font-weight: 600;
+  font-family: '微软雅黑';
+  background-color: #118BCE;
+  color: white;
+}
+.news-wrapper .right-part {
+  width: 1760px;
+}
+.news-wrapper .location-box {
+  display: flex;
+  width: 1760px;
+  height: 112px;
+  padding-top: 50px;
+  border-bottom: 2px solid #E6E6E6;
+}
+.news-wrapper .location-box .anticon-home {
+  margin-right: 20px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 28px;
+  color: #999;
+}
+.news-wrapper .location-box .text {
+  height: 60px;
+  line-height: 60px;
+  font-size: 24px;
+  color: #999;
+}
+.news-wrapper .news-list {
+  margin: 0;
+  padding: 0;
+  width: 1760px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.news-wrapper .news-item {
+  width: 1760px;
+  height: 120px;
+  padding: 35px 20px 35px;
+  border-bottom: 2px dashed #E2E2E2;
+  font-size: 26px;
+  font-family: 'Microsoft Yahei';
+  color: #666;
+}
+.news-wrapper .news-item:hover {
+  background-color: #FAFAFA;
+}
+.news-wrapper .wrap-v1 {
+  justify-content: space-between;
+}

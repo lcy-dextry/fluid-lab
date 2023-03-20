@@ -1,0 +1,43 @@
+.student-card-wrapper {
+  display: flex;
+  width: 740px;
+  height: 350px;
+  padding: 40px;
+  margin-right: 80px;
+  margin-bottom: 80px;
+  background-color: #f2f7fb;
+}
+.student-card-wrapper:nth-child(3n) {
+  margin-right: 0;
+}
+.student-card-wrapper .photo {
+  width: 200px;
+  height: 280px;
+  background-color: #005cbb;
+}
+.student-card-wrapper .stu-msg {
+  width: 320px;
+  margin-left: 40px;
+}
+.student-card-wrapper .stu-msg .name {
+  position: relative;
+  width: 320px;
+  height: 80px;
+  font-size: 36px;
+  font-weight: 600;
+  color: #005cbb;
+  font-family: '楷体';
+}
+.student-card-wrapper .stu-msg .name::after {
+  content: '';
+  width: 60px;
+  height: 2px;
+  background-color: #cccccc;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.student-card-wrapper .stu-msg .email {
+  margin-top: 28px;
+  font-size: 32px;
+}

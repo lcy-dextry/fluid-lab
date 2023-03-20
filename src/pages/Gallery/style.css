@@ -1,0 +1,28 @@
+.gallery-wrapper .brief-msg {
+  margin-top: 40px;
+  width: 2400px;
+  height: 302px;
+  font-family: '宋体';
+}
+.gallery-wrapper .brief-msg .title-part {
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+}
+.gallery-wrapper .brief-msg .pub-time {
+  height: 146px;
+  line-height: 146px;
+  text-align: center;
+  font-size: 28px;
+  color: #515151;
+  border-bottom: 2px #d1d1d1 solid;
+}
+.gallery-wrapper .markdown-part {
+  width: 2400px;
+}
+.gallery-wrapper .markdown-part .markdownStyle img {
+  width: 1200px;
+  height: 800px;
+}

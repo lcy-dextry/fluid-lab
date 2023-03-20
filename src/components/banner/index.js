@@ -1,12 +1,12 @@
 import React, { memo } from 'react'
-// 组件
-import { BannerWrapper } from './style'
+// 样式
+import './style.less'
 
 const Banner = memo(() => {
     return (
-        <BannerWrapper>
+        <div className='banner-wrapper'>
             <div className='banner-img' />
-        </BannerWrapper>
+        </div>
     )
 })
 

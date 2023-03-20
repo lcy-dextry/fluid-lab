@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom'
 import moment from 'moment'
 import { useParams } from 'react-router-dom'
 // 组件
-import { MemberWrapper } from './style'
 import Content from 'c/content'
 import Title from 'c/title'
 import Banner from 'c/banner'
@@ -13,6 +12,8 @@ import StudentCard from './student-card'
 import { memberList } from '@/common/local'
 import { db } from '@/utils/cloudBase';
 import { getMembers } from '@/redux/actions'
+// 样式
+import './style.less'
 
 const Members = memo(({
     data,
@@ -74,7 +75,7 @@ const Members = memo(({
     return (
         <>
             <Banner />
-            <MemberWrapper>
+            <div className='member-wrapper'>
                 <ul className='guide-list'>
                     {
                         memberList.map(item => {
@@ -91,7 +92,7 @@ const Members = memo(({
                     }
                 </ul>
                 <Content Component={component} />
-            </MemberWrapper>
+            </div>
         </>
     )
 })

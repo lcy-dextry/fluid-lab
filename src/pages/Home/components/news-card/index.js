@@ -1,13 +1,14 @@
 import React, { memo } from 'react'
 import { NavLink } from 'react-router-dom';
 // 组件
-import { NewsCardWrapper } from './style'
 import { CalendarOutlined } from '@ant-design/icons';
+// 样式
+import './style.less'
 
 const NewsCard = memo((props) => {
     const { img, title, date, location } = props
     return (
-        <NewsCardWrapper className='news-item'>
+        <div className='news-item'>
             <img className='img-part' alt='' src={img} />
             <div className='news-msg'>
                 <NavLink className='news-title nowrap-one-line'
@@ -19,7 +20,7 @@ const NewsCard = memo((props) => {
                     {date}
                 </div>
             </div>
-        </NewsCardWrapper>
+        </div>
     )
 })
 export default NewsCard

@@ -1,0 +1,13 @@
+.publication-wrapper {
+  margin-top: 128px;
+}
+.publication-wrapper .right-part {
+  width: 1760px;
+}
+.publication-wrapper .article-list {
+  margin: 0;
+  padding: 0;
+}
+.publication-wrapper .wrap-v1 {
+  justify-content: space-between;
+}

@@ -1,10 +1,11 @@
 import React, { memo } from 'react'
 // 组件
-import { LinksWrapper } from './style'
 import Banner from 'c/banner'
 import Content from 'c/content'
 // 数据
 import { contactMsg } from '@/common/local'
+// 样式
+import './style.less'
 
 const Links = memo(() => {
     const component = (
@@ -29,9 +30,9 @@ const Links = memo(() => {
     return (
         <>
             <Banner />
-            <LinksWrapper>
+            <div className='links-wrapper'>
                 <Content Component={component} />
-            </LinksWrapper>
+            </div>
         </>
 
     )
