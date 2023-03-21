@@ -36,7 +36,6 @@ const Tutor = memo(({
         db.collection('tutor')
             .get()
             .then(res => {
-                console.log('执行了！')
                 getTutorText(res.data);
             });
     };

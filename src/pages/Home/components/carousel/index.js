@@ -30,7 +30,7 @@ const CarouselBox = memo(({
         getNewImgs();
         setImg(imgs)
     }, [imgs]);
-    console.log(img)
+
     return (
         <div className='top-part'>
             <div className='filter' />
