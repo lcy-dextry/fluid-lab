@@ -1,4 +1,5 @@
-import React, { memo, useState, useEffect } from 'react'
+import React, { memo, useState } from 'react'
+import useDeepCompareEffect from 'use-deep-compare-effect';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import moment from 'moment'
@@ -19,6 +20,11 @@ const Members = memo(({
     data,
     getMembers
 }) => {
+    // 当前类型
+    const { type } = useParams()
+    // 当前内容
+    const [title, setTitle] = useState('')
+    const [nowMembers, setNowMembers] = useState([])
     // 获取
     const getNewTexts = () => {
         db.collection('members')
@@ -27,15 +33,10 @@ const Members = memo(({
                 getMembers(res.data);
             });
     };
-    useEffect(() => {
+    useDeepCompareEffect(() => {
         getNewTexts();
     }, [data]);
-    // 当前类型
-    const { type } = useParams()
-    // 当前内容
-    const [title, setTitle] = useState('')
-    const [nowMembers, setNowMembers] = useState([])
-    useEffect(() => {
+    useDeepCompareEffect(() => {
         const id = type;
         const theMembers = id === 'master'
             ? data.filter(item => {
@@ -51,7 +52,7 @@ const Members = memo(({
         if (theTitle) {
             setTitle(theTitle)
         }
-    }, [data, document.location])
+    }, [data, type])
     const component = (
         <>
             <Title title={title} />

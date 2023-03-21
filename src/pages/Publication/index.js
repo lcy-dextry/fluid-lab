@@ -1,4 +1,5 @@
-import React, { memo, useState, useEffect } from 'react'
+import React, { memo, useState } from 'react'
+import useDeepCompareEffect from 'use-deep-compare-effect';
 import { connect } from 'react-redux'
 import { useParams } from 'react-router-dom'
 // 组件
@@ -19,6 +20,8 @@ const Publication = memo(({
 }) => {
     // 当前年份
     const { year: currentYear } = useParams()
+    // 当前内容
+    const [nowPapers, setNowPapers] = useState([])
     // 获取
     const getNewTexts = () => {
         db.collection('publication')
@@ -27,18 +30,16 @@ const Publication = memo(({
                 getPublication(res.data);
             });
     };
-    useEffect(() => {
+    useDeepCompareEffect(() => {
         getNewTexts();
     }, [papers]);
-    // 当前内容
-    const [nowPapers, setNowPapers] = useState([])
-    useEffect(() => {
+    useDeepCompareEffect(() => {
         const id = currentYear;
         const thePapers = papers.filter(item => { return item.year === id });
         if (thePapers) {
             setNowPapers(thePapers);
         }
-    }, [papers, document.location])
+    }, [papers, currentYear])
 
     const component = (
         <>

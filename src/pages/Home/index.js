@@ -1,4 +1,5 @@
-import React, { memo, useState, useEffect } from 'react'
+import React, { memo, useState } from 'react'
+import useDeepCompareEffect from 'use-deep-compare-effect';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import moment from 'moment';
@@ -9,6 +10,7 @@ import NewsCard from './components/news-card'
 // 数据
 import { db } from '@/utils/cloudBase';
 import { getNews } from '@/redux/actions';
+import { orderNews } from '@/utils/functions';
 // 样式
 import './style.less'
 
@@ -20,13 +22,13 @@ const Home = memo(({
     // 获取
     const getNewTexts = () => {
         db.collection('news')
-            .limit(4)
             .get()
             .then(res => {
-                getNews(res.data);
+                orderNews(res.data)
+                getNews(res.data.slice(0, 4));
             });
     };
-    useEffect(() => {
+    useDeepCompareEffect(() => {
         getNewTexts();
         setText(news);
     }, [news]);

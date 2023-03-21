@@ -32,3 +32,10 @@ export function makeList(text) {
     })
     return res
 }
+// News 按发布时间排序
+export function orderNews(data) {
+    data.sort((a, b) => {
+        return b.date - a.date
+    })
+    return data
+}

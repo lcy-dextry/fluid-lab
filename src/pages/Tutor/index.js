@@ -1,4 +1,5 @@
-import React, { memo, useState, useEffect } from 'react'
+import React, { memo, useState } from 'react'
+import useDeepCompareEffect from 'use-deep-compare-effect';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
@@ -27,31 +28,29 @@ const Tutor = memo(({
         smartLists: true,
         smartypants: false
     })
-    // 获取
-    const [text, setText] = useState([]);
-    const getNewTexts = () => {
-        db.collection('tutor')
-            .get()
-            .then(res => {
-                getTutorText(res.data);
-            });
-    };
-    useEffect(() => {
-        getNewTexts();
-        setText(texts);
-    }, [texts]);
     // 当前类型
     const { type } = useParams()
     // 当前内容
     const [nowText, setNowText] = useState('')
-    useEffect(() => {
+    const getNewTexts = () => {
+        db.collection('tutor')
+            .get()
+            .then(res => {
+                console.log('执行了！')
+                getTutorText(res.data);
+            });
+    };
+    useDeepCompareEffect(() => {
+        getNewTexts();
+    }, [texts]);
+    useDeepCompareEffect(() => {
         const id = type;
         const theText = texts.filter(item => item.location === id)[0];
         if (theText) {
             const { text } = theText;
             setNowText(text);
         }
-    }, [texts, document.location]);
+    }, [texts, type]);
 
     return (
         <>
@@ -59,7 +58,7 @@ const Tutor = memo(({
             <div className='tutor-wrapper'>
                 <ul className='guide-list'>
                     {
-                        makeList(text).map(item => {
+                        makeList(texts).map(item => {
                             return (
                                 <NavLink
                                     to={`/tutor/${item.location}`}

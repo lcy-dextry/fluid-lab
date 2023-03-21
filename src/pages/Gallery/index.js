@@ -1,4 +1,5 @@
-import React, { memo, useState, useEffect } from 'react'
+import React, { memo, useState } from 'react'
+import useDeepCompareEffect from 'use-deep-compare-effect';
 import { connect } from 'react-redux';
 import { marked } from 'marked';
 import qs from 'qs';
@@ -27,6 +28,10 @@ const Gallery = memo(({
         smartLists: true,
         smartypants: false
     })
+    // 当前内容
+    const [date, setDate] = useState('')
+    const [title, setTitle] = useState('')
+    const [text, setText] = useState('')
     // 获取
     const getNewTexts = () => {
         db.collection('activity')
@@ -35,14 +40,10 @@ const Gallery = memo(({
                 getActivity(res.data);
             });
     };
-    useEffect(() => {
+    useDeepCompareEffect(() => {
         getNewTexts();
     }, [activity]);
-    // 当前内容
-    const [date, setDate] = useState('')
-    const [title, setTitle] = useState('')
-    const [text, setText] = useState('')
-    useEffect(() => {
+    useDeepCompareEffect(() => {
         const params = qs.parse(document.location.search.slice(1));
         const { id } = params;
         const detailText = activity.filter(item => item._id === id)[0]

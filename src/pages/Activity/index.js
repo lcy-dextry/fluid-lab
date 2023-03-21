@@ -1,4 +1,5 @@
-import React, { memo, useState, useEffect } from 'react'
+import React, { memo, useState } from 'react'
+import useDeepCompareEffect from 'use-deep-compare-effect';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { NavLink } from 'react-router-dom';
@@ -20,8 +21,8 @@ const Activity = memo(({
     getActivity
 }) => {
     const { gallery } = useParams()
-    // 获取
-    const [text, setText] = useState([]);
+    // 当前内容
+    const [nowText, setNowText] = useState([])
     const getNewTexts = () => {
         db.collection('activity')
             .get()
@@ -29,19 +30,16 @@ const Activity = memo(({
                 getActivity(res.data);
             });
     };
-    useEffect(() => {
+    useDeepCompareEffect(() => {
         getNewTexts();
-        setText(activity);
     }, [activity]);
-    // 当前内容
-    const [nowText, setNowText] = useState([])
-    useEffect(() => {
+    useDeepCompareEffect(() => {
         const id = gallery;
         const theText = activity.filter(item => item.type === findGalleryName(id, galleryList));
         if (theText) {
             setNowText(theText);
         }
-    }, [activity, document.location]);
+    }, [activity, gallery]);
 
     const component = (
         <>

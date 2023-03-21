@@ -1,10 +1,12 @@
-import React, { memo, useState, useEffect } from 'react'
+import React, { memo, useState } from 'react'
+import useDeepCompareEffect from 'use-deep-compare-effect';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 // 组件
 import Banner from 'c/banner'
 import Content from 'c/content'
 import { HomeFilled } from '@ant-design/icons';
+import { orderNews } from '@/utils/functions';
 // 数据
 import { db } from '@/utils/cloudBase';
 import { getNews } from '@/redux/actions';
@@ -21,14 +23,14 @@ const News = memo(({
         db.collection('news')
             .get()
             .then(res => {
+                orderNews(res.data)
                 getNews(res.data);
             });
     };
-    useEffect(() => {
+    useDeepCompareEffect(() => {
         getNewTexts();
         setText(news);
     }, [news]);
-
     const component = (
         <>
             <div className='left-part'>课题组新闻</div>
