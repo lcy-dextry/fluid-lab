@@ -13,10 +13,6 @@ const CarouselBox = memo(({
     imgs,
     getCarouselImg
 }) => {
-    const contentStyle = {
-        width: '750px',
-        height: '500px',
-    };
     const [img, setImg] = useState([]);
     // 获取
     const getNewImgs = () => {
@@ -39,7 +35,7 @@ const CarouselBox = memo(({
                     img.map(item => {
                         return (
                             <div key={item._id}>
-                                <img style={contentStyle} src={item.img} />
+                                <img src={item.img} alt='carousel imgs' />
                             </div>
                         )
                     })

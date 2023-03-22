@@ -1,3 +1,7 @@
+.member-wrapper {
+  width: 3072px;
+  flex: 1;
+}
 .member-wrapper .guide-list {
   display: flex;
   justify-content: center;

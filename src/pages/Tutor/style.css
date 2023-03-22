@@ -1,3 +1,7 @@
+.tutor-wrapper {
+  width: 3072px;
+  flex: 1;
+}
 .tutor-wrapper .guide-list {
   display: flex;
   justify-content: center;
@@ -9,7 +13,6 @@
   position: relative;
   padding: 0 12px 6px;
   margin: 0 30px;
-  width: 88px;
   height: 128px;
   line-height: 130px;
   text-align: center;

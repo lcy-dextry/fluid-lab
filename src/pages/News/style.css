@@ -1,5 +1,7 @@
 .news-wrapper {
+  width: 3072px;
   margin-top: 128px;
+  flex: 1;
 }
 .news-wrapper .left-part {
   padding-left: 30px;

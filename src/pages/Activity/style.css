@@ -1,5 +1,7 @@
 .activity-wrapper {
+  width: 3072px;
   margin-top: 128px;
+  flex: 1;
 }
 .activity-wrapper .right-part {
   width: 1760px;

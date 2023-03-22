@@ -10,7 +10,7 @@ const Header = memo(() => {
     return (
         <div className='header-wrapper'>
             <div className='wrap-v1'>
-                <a href={adminURL} target='_blank'><div className='lab-name' /></a>
+                <a href={adminURL} target='_blank' rel="noreferrer"><div className='lab-name' /></a>
                 <ul className='guide-list'>
                     {
                         headerLinks.map((item, index) => {

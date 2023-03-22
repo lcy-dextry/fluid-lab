@@ -1,3 +1,7 @@
+.home-wrapper {
+  width: 3072px;
+  flex: 1;
+}
 .home-wrapper .news-part {
   width: 2400px;
 }
