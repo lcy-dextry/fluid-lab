@@ -1,5 +1,6 @@
 .banner-wrapper {
-  border: 2px solid black;
   width: 3072px !important;
-  height: 600px;
+  height: 800px;
+  background: url(../../assets/img/dt1.png);
+  background-size: cover;
 }
