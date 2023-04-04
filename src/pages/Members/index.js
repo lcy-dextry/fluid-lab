@@ -40,10 +40,10 @@ const Members = memo(({
         const id = type;
         const theMembers = id === 'master'
             ? data.filter(item => {
-                return moment(item.year).add(31, 'months').isAfter(moment());
+                return moment(item.year).add(34, 'months').isAfter(moment());
             })
             : data.filter(item => {
-                return moment(item.year).add(31, 'months').isBefore(moment());
+                return moment(item.year).add(34, 'months').isBefore(moment());
             })
         const theTitle = id === 'master' ? '研究生' : '毕业生'
         if (theMembers) {
