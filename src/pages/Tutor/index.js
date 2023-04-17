@@ -52,34 +52,32 @@ const Tutor = memo(({
     }, [texts, type]);
 
     return (
-        <>
+        <div className='tutor-wrapper'>
             <Banner />
-            <div className='tutor-wrapper'>
-                <ul className='guide-list'>
-                    {
-                        makeList(texts).map(item => {
-                            return (
-                                <NavLink
-                                    to={`/tutor/${item.location}`}
-                                    className='guide-item'
-                                    key={item.type}
-                                >
-                                    {item.type}
-                                </NavLink>
-                            )
-                        })
-                    }
-                </ul>
-                <div className='wrap-v1 markdown-part'>
-                    <div
-                        className=" markdownStyle"
-                        dangerouslySetInnerHTML={{
-                            __html: marked(nowText).replace(/<pre>/g, "<pre>"),
-                        }}
-                    />
-                </div>
+            <ul className='guide-list'>
+                {
+                    makeList(texts).map(item => {
+                        return (
+                            <NavLink
+                                to={`/tutor/${item.location}`}
+                                className='guide-item'
+                                key={item.type}
+                            >
+                                {item.type}
+                            </NavLink>
+                        )
+                    })
+                }
+            </ul>
+            <div className='wrap-v1 markdown-part'>
+                <div
+                    className=" markdownStyle"
+                    dangerouslySetInnerHTML={{
+                        __html: marked(nowText).replace(/<pre>/g, "<pre>"),
+                    }}
+                />
             </div>
-        </>
+        </div>
     )
 })
 export default connect(

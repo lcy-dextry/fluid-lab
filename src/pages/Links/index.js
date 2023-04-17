@@ -28,13 +28,10 @@ const Links = memo(() => {
         </>
     )
     return (
-        <>
+        <div className='links-wrapper'>
             <Banner />
-            <div className='links-wrapper'>
-                <Content Component={component} />
-            </div>
-        </>
-
+            <Content Component={component} />
+        </div>
     )
 })
 

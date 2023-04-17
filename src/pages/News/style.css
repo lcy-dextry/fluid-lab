@@ -1,6 +1,6 @@
 .news-wrapper {
+  margin-top: calc(160px - 100vh);
   width: 3072px;
-  margin-top: 128px;
   flex: 1;
 }
 .news-wrapper .left-part {
@@ -57,5 +57,6 @@
   background-color: #FAFAFA;
 }
 .news-wrapper .wrap-v1 {
+  margin-top: 128px !important;
   justify-content: space-between;
 }

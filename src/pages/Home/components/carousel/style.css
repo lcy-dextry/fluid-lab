@@ -1,9 +1,11 @@
 .top-part {
   position: relative;
-  overflow: hidden;
+  top: 0;
+  left: 0;
   width: 3072px;
   height: 1400px;
-  background: url(../../../../assets/img/home-background.jpg);
+  overflow: hidden;
+  background: url(../../../../assets/img/home-background.webp);
 }
 .top-part .filter {
   position: absolute;

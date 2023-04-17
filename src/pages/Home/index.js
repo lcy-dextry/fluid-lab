@@ -57,12 +57,10 @@ const Home = memo(({
         </>
     )
     return (
-        <>
+        <div className='home-wrapper'>
             <Carousel />
-            <div className='home-wrapper'>
-                <Content Component={component} />
-            </div>
-        </>
+            <Content Component={component} />
+        </div>
     )
 })
 export default connect(

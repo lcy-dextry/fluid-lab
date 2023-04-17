@@ -6,13 +6,10 @@ import './style.less'
 
 const Research = memo(() => {
     return (
-        <>
+        <div className='research-wrapper'>
             <Banner />
-            <div className='research-wrapper'>
-                Research
-            </div>
-        </>
-
+            Research
+        </div>
     )
 })
 export default Research

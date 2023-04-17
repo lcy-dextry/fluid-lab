@@ -72,13 +72,10 @@ const Gallery = memo(({
     )
 
     return (
-        <>
+        <div className='gallery-wrapper'>
             <Banner />
-            <div className='gallery-wrapper'>
-                <Content Component={component} />
-            </div>
-        </>
-
+            <Content Component={component} />
+        </div>
     )
 })
 export default connect(

@@ -73,12 +73,10 @@ const DetailNew = memo(({
     )
 
     return (
-        <>
+        <div className='detail-new-wrapper'>
             <Banner />
-            <div className='detail-new-wrapper'>
-                <Content Component={component} />
-            </div>
-        </>
+            <Content Component={component} />
+        </div>
     )
 })
 export default connect(

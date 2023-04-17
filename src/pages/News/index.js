@@ -60,12 +60,10 @@ const News = memo(({
         </>
     )
     return (
-        <>
+        <div className='news-wrapper'>
             <Banner />
-            <div className='news-wrapper'>
-                <Content Component={component} />
-            </div>
-        </>
+            <Content Component={component} />
+        </div>
     )
 })
 export default connect(

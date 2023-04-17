@@ -74,27 +74,25 @@ const Members = memo(({
         </>
     )
     return (
-        <>
+        <div className='member-wrapper'>
             <Banner />
-            <div className='member-wrapper'>
-                <ul className='guide-list'>
-                    {
-                        memberList.map(item => {
-                            return (
-                                <NavLink
-                                    to={`/members/${item.location}`}
-                                    className='guide-item'
-                                    key={item.type}
-                                >
-                                    {item.type}
-                                </NavLink>
-                            )
-                        })
-                    }
-                </ul>
-                <Content Component={component} />
-            </div>
-        </>
+            <ul className='guide-list'>
+                {
+                    memberList.map(item => {
+                        return (
+                            <NavLink
+                                to={`/members/${item.location}`}
+                                className='guide-item'
+                                key={item.type}
+                            >
+                                {item.type}
+                            </NavLink>
+                        )
+                    })
+                }
+            </ul>
+            <Content Component={component} />
+        </div>
     )
 })
 export default connect(

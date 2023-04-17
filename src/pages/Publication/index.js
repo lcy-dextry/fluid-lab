@@ -61,13 +61,10 @@ const Publication = memo(({
         </>
     )
     return (
-        <>
+        <div className='publication-wrapper'>
             <Banner />
-            <div className='publication-wrapper'>
-                <Content Component={component} />
-            </div>
-        </>
-
+            <Content Component={component} />
+        </div>
     )
 })
 export default connect(

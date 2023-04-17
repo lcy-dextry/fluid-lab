@@ -65,12 +65,10 @@ const Activity = memo(({
         </>
     )
     return (
-        <>
+        <div className='activity-wrapper'>
             <Banner />
-            <div className='activity-wrapper'>
-                <Content Component={component} />
-            </div>
-        </>
+            <Content Component={component} />
+        </div>
     )
 })
 export default connect(
