@@ -3,6 +3,10 @@
   flex-wrap: wrap;
   width: 540px;
   height: 600px;
+  margin-right: 80px;
+}
+.news-item:last-child {
+  margin-right: 0;
 }
 .news-item .img-part {
   width: 540px;
