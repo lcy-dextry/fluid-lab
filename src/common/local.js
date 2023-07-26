@@ -1,7 +1,7 @@
 // cloudBase ID
 export const env = 'fluid-lab-admin-0gjtvps336032515';
-export const email = 'wangleir1989@126.com'
-export const password = 'Lattice753*#^'
+export const email = '812852904@qq.com'
+export const password = 'fluidlab123'
 export const adminURL = 'https://fluid-lab-admin-0gjtvps336032515-1315570145.tcloudbaseapp.com/'
 // Header
 // import { SearchOutlined } from '@ant-design/icons';

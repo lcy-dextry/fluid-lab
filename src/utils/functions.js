@@ -20,6 +20,17 @@ export function findGalleryName(gallery, galleryList) {
     })
     return galleryName
 }
+// Activity页面当前位置
+export function findResearchName(research, researchList) {
+    let researchName = ''
+    researchList.map(item => {
+        if (item.location === research + '') {
+            researchName = item.type
+        }
+        return item
+    })
+    return researchName
+}
 // Tutor页面guideList
 export function makeList(text) {
     let res = []

@@ -10,3 +10,5 @@ export const GET_MEMBERS = 'get-members';
 export const GET_NEWS = 'get-news';
 // activity
 export const GET_ACTIVITY = 'get-activity'
+// research
+export const GET_RESEARCH_TEXT = 'get-research-text'

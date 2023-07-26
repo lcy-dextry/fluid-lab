@@ -5,6 +5,7 @@ import {
     GET_NEWS,
     GET_PUBLICATION,
     GET_TUTOR_TEXT,
+    GET_RESEARCH_TEXT
 } from "./constant";
 
 // 获得Carousel页面数据
@@ -15,6 +16,11 @@ export const getCarouselImg = data => ({
 // 获得Tutor页面数据
 export const getTutorText = data => ({
     type: GET_TUTOR_TEXT,
+    data,
+});
+// 获得Research页面的数据
+export const getResearchText = data => ({
+    type: GET_RESEARCH_TEXT,
     data,
 });
 // 获得Publication页面数据

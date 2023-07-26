@@ -1,0 +1,52 @@
+.research-menu-wrapper {
+  width: 490px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.research-menu-wrapper .choosen-one {
+  padding-left: 30px;
+  width: 490px;
+  height: 110px;
+  line-height: 110px;
+  font-size: 32px;
+  font-weight: 600;
+  font-family: '微软雅黑';
+  background-color: #118BCE;
+  color: white;
+}
+.research-menu-wrapper .show-research-list {
+  padding: 0;
+  width: 490px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.research-menu-wrapper .show-research-list .show-research-item {
+  position: relative;
+  padding-left: 60px;
+  width: 490px;
+  height: 80px;
+  border: 2px solid white;
+  border-left: none;
+  line-height: 80px;
+  font-size: 32px;
+  font-weight: 600;
+  font-family: '微软雅黑';
+  background-color: #f2f7fb;
+  color: #666;
+}
+.research-menu-wrapper .show-research-list .show-research-item:hover::after {
+  background-color: #118BCE;
+}
+.research-menu-wrapper .show-research-list .show-research-item::after {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  content: '';
+  width: 10px;
+  height: 52px;
+  background-color: transparent;
+}
+.research-menu-wrapper .show-research-list .active::after {
+  background-color: #118BCE;
+}
