@@ -31,6 +31,7 @@ const News = memo(({
         getNewTexts();
         setText(news);
     }, [news]);
+    
     const component = (
         <>
             <div className='left-part'>课题组新闻</div>

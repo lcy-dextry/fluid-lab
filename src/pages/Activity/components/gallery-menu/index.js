@@ -1,16 +1,14 @@
-import React, { memo, useState } from 'react'
+import React, { memo } from 'react'
 import { NavLink } from 'react-router-dom'
 // 数据
 import { galleryList } from '@/common/local'
 // 样式
 import './style.less'
 
-const GalleyMenu = memo(() => {
-    const [galley, setGalley] = useState('成员合影')
-
+const GalleyMenu = memo((props) => {
     return (
         <div className='galley-menu-wrapper'>
-            <div className='choosen-one'>{galley}</div>
+            <div className='choosen-one'>{props.gallery}</div>
             <ul className='show-galley-list'>
                 {
                     galleryList.map(item => {
@@ -19,7 +17,6 @@ const GalleyMenu = memo(() => {
                                 key={item.name}
                                 className='show-galley-item'
                                 to={`/activity/${item.location}`}
-                                onClick={e => { setGalley(e.target.innerHTML) }}
                             >
                                 {item.name}
                             </NavLink>

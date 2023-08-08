@@ -43,7 +43,7 @@ const Activity = memo(({
 
     const component = (
         <>
-            <GalleyMenu />
+            <GalleyMenu gallery={findGalleryName(gallery, galleryList)} />
             <div className='right-part'>
                 <LocationBox gallery={findGalleryName(gallery, galleryList)} />
                 <ul className='gallery-list'>

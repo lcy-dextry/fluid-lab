@@ -29,7 +29,6 @@ const CarouselBox = memo(({
 
     return (
         <div className='top-part'>
-            <div className='filter' />
             <Carousel autoplay>
                 {
                     img.map(item => {

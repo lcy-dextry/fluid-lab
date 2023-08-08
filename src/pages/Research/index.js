@@ -1,18 +1,13 @@
 import React, { memo, useState } from 'react'
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom'
 import { marked } from 'marked';
 // 组件
 import Banner from 'c/banner'
 import Content from 'c/content'
-import ResearchMenu from './components/research-menu'
-import LocationBox from './components/location-box'
 // 数据
 import { db } from '@/utils/cloudBase';
-import { findResearchName } from '@/utils/functions';
 import { getResearchText } from '@/redux/actions';
-import { makeList } from '@/utils/functions';
 // 样式
 import './style.less'
 
@@ -31,10 +26,9 @@ const Research = memo(({
         smartLists: true,
         smartypants: false
     })
-    // 当前类型
-    const { type } = useParams()
     // 当前内容
-    const [nowText, setNowText] = useState('')
+    const [text, setText] = useState([])
+    // 获取
     const getNewTexts = () => {
         db.collection('research')
             .get()
@@ -44,28 +38,28 @@ const Research = memo(({
     };
     useDeepCompareEffect(() => {
         getNewTexts();
+        setText(texts);
     }, [texts]);
-    useDeepCompareEffect(() => {
-        const id = type;
-        const theText = texts.filter(item => item.location === id)[0];
-        if (theText) {
-            const { text } = theText;
-            setNowText(text);
-        }
-    }, [texts, type]);
 
     const component = (
         <>
-            <ResearchMenu researchList={makeList(texts)} />
+            <div className='research-menu-wrapper'>
+                <div className='choosen-one'>研究方向</div>
+            </div>
             <div className='right-part'>
-                <LocationBox research={findResearchName(type, makeList(texts))} />
                 <div className='markdown-part'>
-                    <div
-                        className=" markdownStyle"
-                        dangerouslySetInnerHTML={{
-                            __html: marked(nowText).replace(/<pre>/g, "<pre>"),
-                        }}
-                    />
+                    {
+                        text.map(item => {
+                            return (
+                                <div key={item._id}
+                                    className=" markdownStyle"
+                                    dangerouslySetInnerHTML={{
+                                        __html: marked(item.text).replace(/<pre>/g, "<pre>"),
+                                    }}
+                                />
+                            )
+                        })
+                    }
                 </div>
             </div>
         </>

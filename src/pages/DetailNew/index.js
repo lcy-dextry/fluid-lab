@@ -55,6 +55,7 @@ const DetailNew = memo(({
             setText(text);
         }
     }, [news, currentID]);
+    
     const component = (
         <>
             <div className='brief-msg'>

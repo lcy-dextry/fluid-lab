@@ -32,7 +32,6 @@ export const galleryList = [
     { name: '成员合影', location: 'group' },
     { name: '学术活动', location: 'academic' },
     { name: '日常活动', location: 'daily' },
-    { name: '成员风采', location: 'members' },
 ]
 // Links
 export const contactMsg = [
